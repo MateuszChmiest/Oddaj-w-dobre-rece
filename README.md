@@ -1,1 +1,0 @@
-# Oddaj-w-dobre-rece
