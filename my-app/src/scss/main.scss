@@ -1,5 +1,12 @@
 //* Import reset
 @import "./settings/reset.scss";
 
+//* Import settings
+@import "./settings/colors";
+@import "./settings/fonts";
+
 //* Import components
-@import "./Home.scss"
+@import "./home";
+@import "./navSignUp";
+@import "./nav";
+@import "./homeheader"

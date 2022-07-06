@@ -1,0 +1,141 @@
+.nav {
+	width: 100%;
+	position: absolute;
+	margin-top: 1.875rem;
+
+	&__container {
+		display: flex;
+		justify-content: flex-end;
+		margin-right: 8.875rem;
+
+		@media (max-width: 700px) {
+		}
+	}
+
+	&__active {
+		display: none;
+	}
+
+	&__checkbox {
+		position: absolute;
+		display: block;
+		height: 32px;
+		width: 32px;
+		top: 20px;
+		right: 20px;
+		z-index: 5;
+		opacity: 0;
+	}
+
+	&__burger {
+		display: none;
+
+		@media (max-width: 700px) {
+			display: block;
+			height: 26px;
+			width: 2.65rem;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 2;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		.line {
+			display: block;
+			height: 4px;
+			width: 100%;
+			border-radius: 10px;
+			background: #0e2431;
+		}
+
+		.line1 {
+			transform-origin: 0% 0%;
+			transition: transform 0.4s ease-in-out;
+		}
+
+		.line2 {
+			transition: transform 0.2s ease-in-out;
+		}
+
+		.line3 {
+			transform-origin: 0% 100%;
+			transition: transform 0.4s ease-in-out;
+		}
+	}
+
+	&__elements {
+		@media (max-width: 700px) {
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			transform: translate(-150%);
+			transition: 0.3s;
+			background: rgba(184, 184, 184, 0.72);
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(4.2px);
+			-webkit-backdrop-filter: blur(7.2px);
+			border: 1px solid rgba(148, 148, 148, 0.3);
+		}
+
+		a {
+			font-size: 1.125rem;
+			margin-left: 3.4375rem;
+			padding: 0.5rem 0.625rem;
+			border: 0.75px solid transparent;
+			color: $color-darkgray;
+			cursor: pointer;
+			transition: 0.2s;
+
+			@media (max-width: 700px) {
+				font-size: 1.6rem;
+				margin-left: 0;
+				border: none;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.158);
+				width: 100%;
+				text-align: center;
+				color: $color-primary;
+				padding: 2rem;
+			}
+
+			&:hover {
+				border-color: $color-secondary;
+
+				@media (max-width: 700px) {
+					background-color: rgba(255, 255, 255, 0.308);
+                    border-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+.burger--active {
+	.line1 {
+		transform: rotate(45deg);
+	}
+
+	.line2 {
+		transform: scaleY(0);
+	}
+
+	.line3 {
+		transform: rotate(-45deg);
+	}
+}
+
+.nav--active {
+	transform: rotate(0);
+}

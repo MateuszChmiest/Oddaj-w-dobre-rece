@@ -13,21 +13,21 @@ const Home = () => {
 			<Element name='HomeHeader'>
 				<HomeHeader />
 			</Element>
-			<Element name="HomeThreeColumns">
-      <HomeThreeColumns />
-      </Element>
-			<Element name="HomeSimpleSteps">
-        <HomeSimpleSteps/>
-      </Element>
-			<Element name="HomeAboutUs">
-        <HomeAboutUs/>
-      </Element>
-			<Element name="HomeWhoWeHelp">
-        <HomeWhoWeHelp/>
-      </Element>
-			<Element name="HomeContact">
-        <HomeContact/>
-      </Element>
+			{/* <Element name='HomeThreeColumns'>
+				<HomeThreeColumns />
+			</Element>
+			<Element name='HomeSimpleSteps'>
+				<HomeSimpleSteps />
+			</Element>
+			<Element name='HomeAboutUs'>
+				<HomeAboutUs />
+			</Element>
+			<Element name='HomeWhoWeHelp'>
+				<HomeWhoWeHelp />
+			</Element>
+			<Element name='HomeContact'>
+				<HomeContact />
+			</Element> */}
 		</>
 	);
 };

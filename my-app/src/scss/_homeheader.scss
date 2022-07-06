@@ -1,0 +1,27 @@
+.homeHeader {
+    display: flex;
+    align-items: center;
+    
+    &__image {
+        background-image: url("../assets/Home-Hero-Image.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 100% 0;
+        height: 100vh;
+        width: 50%;
+    }
+
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+
+    }
+
+    &__decoration {
+        background-image: url("../assets/Decoration.svg");
+        background-repeat: no-repeat;
+        width: 253px;
+        height: 33px;
+    }
+}
