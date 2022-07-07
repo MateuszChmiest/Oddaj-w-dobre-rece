@@ -1,13 +1,17 @@
 import React from "react";
+import { Link as LinkScroll } from "react-scroll";
+import { useNavigate } from "react-router";
 
 const Nav = () => {
 
-    const toggleBurger = () => {
-        const burger = document.querySelector('.nav__burger');
-        const menu = document.querySelector('.nav__elements')
-        menu.classList.toggle('nav--active')
-        burger.classList.toggle('burger--active');
-    }
+	const toggleBurger = () => {
+		const burger = document.querySelector(".nav__burger");
+		const menu = document.querySelector(".nav__elements");
+		menu.classList.toggle("nav--active");
+		burger.classList.toggle("burger--active");
+	};
+
+	const navigate = useNavigate();
 
 	return (
 		<div className='nav__container'>
@@ -17,11 +21,51 @@ const Nav = () => {
 				<span className='line line3'></span>
 			</button>
 			<div className='nav__elements'>
-				<a className='nav__element'>Start</a>
-				<a className='nav__element'>O co chodzi?</a>
-				<a className='nav__element'>O nas</a>
-				<a className='nav__element'>Fundacja i organizacje</a>
-				<a className='nav__element'>Kontakt</a>
+				<LinkScroll
+					onClick={() => {
+						navigate("/")  
+						toggleBurger()
+					}}
+					className='nav__element'
+					to='HomeHeader'
+					spy={true}
+					smooth={true}
+					duration={500}>
+					Start
+				</LinkScroll>
+				<LinkScroll
+					onClick={toggleBurger}
+					className='nav__element'
+					to='HomeThreeColumns'
+					spy={true}
+					smooth={true}
+					duration={500}>
+					O co chodzi?
+				</LinkScroll>
+				<LinkScroll
+					onClick={toggleBurger}
+					className='nav__element'
+					spy={true}
+					smooth={true}
+					duration={500}>
+					O nas
+				</LinkScroll>
+				<LinkScroll
+					onClick={toggleBurger}
+					className='nav__element'
+					spy={true}
+					smooth={true}
+					duration={500}>
+					Fundacja i organizacje
+				</LinkScroll>
+				<LinkScroll
+					onClick={toggleBurger}
+					className='nav__element'
+					spy={true}
+					smooth={true}
+					duration={500}>
+					Kontakt
+				</LinkScroll>
 			</div>
 		</div>
 	);

@@ -1,6 +1,7 @@
 .navSignUp {
     display: flex;
     justify-content: center;
+    z-index: 1;
 
     @include laptop {
 
@@ -14,6 +15,7 @@
         padding: 0.5rem  0.625rem ;
         border: 0.75px solid transparent;
         transition: .2s;
+        z-index: 1;
 
         &:hover {
             border-color: $color-yellow;

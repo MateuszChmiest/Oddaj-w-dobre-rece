@@ -39,7 +39,11 @@
         h2 {
             font-size: 1.25rem;
             color: $color-darkgray;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.25rem;
+
+            @include tablet {
+                margin-bottom: 1.75rem;
+            }
         }
 
         p {
