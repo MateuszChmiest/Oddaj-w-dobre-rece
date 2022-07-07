@@ -13,10 +13,10 @@ const Home = () => {
 			<Element name='HomeHeader'>
 				<HomeHeader />
 			</Element>
-			{/* <Element name='HomeThreeColumns'>
+			<Element name='HomeThreeColumns'>
 				<HomeThreeColumns />
 			</Element>
-			<Element name='HomeSimpleSteps'>
+			{/* <Element name='HomeSimpleSteps'>
 				<HomeSimpleSteps />
 			</Element>
 			<Element name='HomeAboutUs'>

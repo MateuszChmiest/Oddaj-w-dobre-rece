@@ -7,51 +7,39 @@
 		display: flex;
 		justify-content: flex-end;
 		margin-right: 8.875rem;
-
-		@media (max-width: 700px) {
-		}
 	}
 
 	&__active {
 		display: none;
 	}
 
-	&__checkbox {
-		position: absolute;
-		display: block;
-		height: 32px;
-		width: 32px;
-		top: 20px;
-		right: 20px;
-		z-index: 5;
-		opacity: 0;
-	}
-
 	&__burger {
-		display: none;
+		display: block;
+		height: 1.625rem;
+		width: 2.7rem;
+		position: absolute;
+		top: 2rem;
+		right: 1.25rem;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		position: fixed;
 
-		@media (max-width: 700px) {
-			display: block;
-			height: 26px;
-			width: 2.65rem;
-			position: absolute;
-			top: 20px;
-			right: 20px;
-			z-index: 2;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			background-color: transparent;
-			border: none;
-			cursor: pointer;
+		@include laptop {
+			display: none;
 		}
 
 		.line {
 			display: block;
-			height: 4px;
+			height: 3px;
 			width: 100%;
 			border-radius: 10px;
-			background: #0e2431;
+			background: $color-darkgray;
+			position: relative;
 		}
 
 		.line1 {
@@ -70,7 +58,7 @@
 	}
 
 	&__elements {
-		@media (max-width: 700px) {
+		@media (max-width: 1025px) {
 			position: fixed;
 			z-index: 1;
 			top: 0;
@@ -91,31 +79,31 @@
 		}
 
 		a {
-			font-size: 1.125rem;
-			margin-left: 3.4375rem;
-			padding: 0.5rem 0.625rem;
-			border: 0.75px solid transparent;
-			color: $color-darkgray;
-			cursor: pointer;
-			transition: 0.2s;
+			font-size: 1.6rem;
+			margin-left: 0;
+			border: none;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.158);
+			width: 100%;
+			text-align: center;
+			color: $color-primary;
+			padding: 2rem;
 
-			@media (max-width: 700px) {
-				font-size: 1.6rem;
-				margin-left: 0;
-				border: none;
-				border-bottom: 1px solid rgba(255, 255, 255, 0.158);
-				width: 100%;
-				text-align: center;
-				color: $color-primary;
-				padding: 2rem;
+			@include laptop {
+				font-size: 1.125rem;
+				margin-left: 3.4375rem;
+				padding: 0.5rem 0.625rem;
+				border: 0.75px solid transparent;
+				color: $color-darkgray;
+				cursor: pointer;
+				transition: 0.2s;
 			}
 
 			&:hover {
-				border-color: $color-secondary;
+				background-color: rgba(255, 255, 255, 0.308);
+				border-color: transparent;
 
-				@media (max-width: 700px) {
-					background-color: rgba(255, 255, 255, 0.308);
-                    border-color: transparent;
+				@include laptop{
+					border-color: $color-secondary;
 				}
 			}
 		}

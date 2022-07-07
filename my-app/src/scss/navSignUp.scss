@@ -1,8 +1,14 @@
 .navSignUp {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 9.5rem;
-    margin-bottom: 2.125rem;
+    justify-content: center;
+
+    @include laptop {
+
+        justify-content: flex-end;
+        margin-right: 9.5rem;
+        margin-bottom: 2.125rem;
+    }
+
 
     &__button {
         padding: 0.5rem  0.625rem ;

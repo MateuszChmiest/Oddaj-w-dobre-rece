@@ -4,9 +4,11 @@
 //* Import settings
 @import "./settings/colors";
 @import "./settings/fonts";
+@import "./settings/mixins";
 
 //* Import components
 @import "./home";
 @import "./navSignUp";
 @import "./nav";
-@import "./homeheader"
+@import "./homeheader";
+@import "./homethreecolumns.scss"

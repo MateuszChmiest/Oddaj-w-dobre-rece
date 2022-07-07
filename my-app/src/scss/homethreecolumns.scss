@@ -1,0 +1,50 @@
+.homeThreeColumns {
+    background: url("../assets/ThreeColumnsBackground.png");
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 1550px;
+
+        @include tablet {
+            flex-direction: unset;
+        }
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        max-width: 60%;
+
+        @include laptop {
+            margin: 2rem 0 2rem 3rem;
+            padding: 3rem;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 300;
+            color: $color-secondary;
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: $color-darkgray;
+            margin-bottom: 1.75rem;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+    }
+}
