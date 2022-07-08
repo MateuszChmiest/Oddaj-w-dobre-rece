@@ -19,10 +19,10 @@ const Home = () => {
 			 <Element name='HomeSimpleSteps'>
 				<HomeSimpleSteps />
 			</Element>
-			{/*<Element name='HomeAboutUs'>
+			<Element name='HomeAboutUs'>
 				<HomeAboutUs />
 			</Element>
-			<Element name='HomeWhoWeHelp'>
+			{/*<Element name='HomeWhoWeHelp'>
 				<HomeWhoWeHelp />
 			</Element>
 			<Element name='HomeContact'>

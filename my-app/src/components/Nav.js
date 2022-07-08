@@ -36,7 +36,7 @@ const Nav = () => {
 				<LinkScroll
 					onClick={toggleBurger}
 					className='nav__element'
-					to='HomeThreeColumns'
+					to='HomeSimpleSteps'
 					spy={true}
 					smooth={true}
 					duration={500}>
@@ -45,6 +45,7 @@ const Nav = () => {
 				<LinkScroll
 					onClick={toggleBurger}
 					className='nav__element'
+					to="HomeAboutUs"
 					spy={true}
 					smooth={true}
 					duration={500}>
