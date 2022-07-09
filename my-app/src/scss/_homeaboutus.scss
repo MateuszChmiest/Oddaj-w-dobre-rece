@@ -28,6 +28,7 @@
         background-image: url("../assets/Decoration.svg");
         width: 253px;
         height: 33px;
+        margin-bottom: 1.5rem;
     }
 
     &__text {
@@ -42,6 +43,7 @@
         h3 {
             font-size: 1.75rem;
             margin-top: 3rem;
+            margin-bottom: 1rem;
 
             @include tablet {
                 font-size: 2rem;

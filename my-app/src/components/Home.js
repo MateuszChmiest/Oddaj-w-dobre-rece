@@ -22,10 +22,10 @@ const Home = () => {
 			<Element name='HomeAboutUs'>
 				<HomeAboutUs />
 			</Element>
-			{/*<Element name='HomeWhoWeHelp'>
+			<Element name='HomeWhoWeHelp'>
 				<HomeWhoWeHelp />
 			</Element>
-			<Element name='HomeContact'>
+			{/*<Element name='HomeContact'>
 				<HomeContact />
 			</Element> */}
 		</>
