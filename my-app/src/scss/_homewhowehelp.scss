@@ -1,55 +1,65 @@
 .whoWeHelp {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 
-    height: 100vh;
+	height: 100vh;
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 3rem;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 3rem;
 
-        h2 {
-            font-size: 2rem;
-            color: $color-darkgray;
-        }
-    }
+		h2 {
+			font-size: 1.5rem;
+			color: $color-darkgray;
 
-    &__decoration {
-        background-image: url("../assets/Decoration.svg");
-        width: 253px;
-        height: 33px;
-        margin-top: 1.5rem;
-        margin-bottom: 3rem;
-    }
+			@include tablet {
+				font-size: 2rem;
+			}
+		}
+	}
 
-    &__steps {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+	&__decoration {
+		background-image: url("../assets/Decoration.svg");
+		width: 253px;
+		height: 33px;
+		margin-top: 1.5rem;
+		margin-bottom: 3rem;
+	}
 
-    &__step {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 209px;
-        height: 79px;
-        font-size: 1.5rem;
-        text-align: center;
-        color: $color-darkgray;
-        border: 0.75px solid transparent;
-        transition: .2s;
-        cursor: pointer;
+	&__steps {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-        &:nth-of-type(2) {
-            margin: 0 1.5rem 0 1.5rem;
-        }
+	&__step {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 120px;
+		height: 50px;
+		font-size: 0.75rem;
+		text-align: center;
+		color: $color-darkgray;
+		border: 0.75px solid transparent;
+		transition: 0.2s;
+		cursor: pointer;
 
-        &:hover {
-            border-color: $color-darkgray;
-        }
+		@include tablet {
+			max-width: 209px;
+			height: 79px;
+			font-size: 1.5rem;
+		}
 
-    }
+		&:nth-of-type(2) {
+			margin: 0 1.5rem 0 1.5rem;
+		}
+
+		&:hover {
+			border-color: $color-darkgray;
+		}
+	}
 }

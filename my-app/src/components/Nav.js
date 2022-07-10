@@ -54,6 +54,7 @@ const Nav = () => {
 				<LinkScroll
 					onClick={toggleBurger}
 					className='nav__element'
+					to="HomeWhoWeHelp"
 					spy={true}
 					smooth={true}
 					duration={500}>
