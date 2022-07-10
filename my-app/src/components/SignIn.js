@@ -12,10 +12,15 @@ const SignIn = (props) => {
 		emailError,
 		passwordError,
     clearErrors,
-    clearInputs
+    clearInputs,
+    currentUser,
 	} = props;
 
 	const navigate = useNavigate();
+  
+  if (currentUser) {
+    navigate("/");
+  }
 
 	return (
 		<section className='signIn'>

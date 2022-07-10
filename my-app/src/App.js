@@ -35,6 +35,7 @@ const App = () => {
 	async function handleSignIn() {
 		try {
 			await login(email, password);
+			
 		} catch (err){
 			console.error(err)
 			clearInputs();
@@ -125,6 +126,7 @@ const App = () => {
 							passwordError={passwordError}
 							clearErrors={clearErrors}
 							clearInputs={clearInputs}
+							currentUser={currentUser}
 						/>
 					}
 				/>

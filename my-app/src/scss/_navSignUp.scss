@@ -1,34 +1,57 @@
 .navSignUp {
-    display: flex;
-    justify-content: center;
-    z-index: 1;
+	display: flex;
+	justify-content: center;
+	z-index: 1;
+	align-items: center;
+    flex-direction: column;
+
+	@include laptop {
+		justify-content: flex-end;
+		margin-right: 9.5rem;
+		margin-bottom: 2.125rem;
+        flex-direction: unset;
+	}
+
+	&__button {
+		padding: 0.5rem 0.625rem;
+		border: 0.75px solid transparent;
+		transition: 0.2s;
+		z-index: 1;
+
+		&:hover {
+			border-color: $color-yellow;
+		}
+
+        @include laptop {
+            &:first-child {
+                margin-right: 1.25rem;
+            }
+    
+        }
+
+		a {
+			font-size: 0.8125rem;
+			cursor: pointer;
+			color: $color-lightgray;
+		}
+	}
+}
+
+#hiddenButton {
+	display: none;
+
+	@include tablet {
+		display: block;
+	}
+}
+
+#currentUser {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: black;
 
     @include laptop {
-
-        justify-content: flex-end;
-        margin-right: 9.5rem;
-        margin-bottom: 2.125rem;
+        margin-right: 1.25rem;
     }
 
-
-    &__button {
-        padding: 0.5rem  0.625rem ;
-        border: 0.75px solid transparent;
-        transition: .2s;
-        z-index: 1;
-
-        &:hover {
-            border-color: $color-yellow;
-        }
-        
-        &:first-child {
-            margin-right: 1.25rem;
-        }
-        
-        a {
-            font-size: 0.8125rem;
-            cursor: pointer;
-            color: $color-lightgray;
-        }
-    }
 }

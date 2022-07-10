@@ -2,9 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useAuth } from "../services/firebase";
 
-
 const NavSignUp = (props) => {
-	const {handleLogout} = props;
+	const { handleLogout } = props;
 	const navigate = useNavigate();
 	const currentUser = useAuth();
 
@@ -12,12 +11,18 @@ const NavSignUp = (props) => {
 		<div className='navSignUp'>
 			{currentUser ? (
 				<>
-					<h1>Cześć {currentUser.email}</h1>
 					<div className='navSignUp__button'>
-						<a onClick={() => {
-							handleLogout();
-							navigate("/");
-						}}>Wyloguj</a>
+						<a id="hiddenButton">Oddaj rzeczy</a>
+					</div>
+					<a id="currentUser">Cześć {currentUser.email}</a>
+					<div className='navSignUp__button'>
+						<a
+							onClick={() => {
+								handleLogout();
+								navigate("/");
+							}}>
+							Wyloguj
+						</a>
 					</div>
 				</>
 			) : (
