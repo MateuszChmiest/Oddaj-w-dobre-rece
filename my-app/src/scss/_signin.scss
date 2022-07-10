@@ -1,0 +1,75 @@
+.signIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 300;
+        }
+    }
+
+    &__decoration {
+        background-image: url("../assets/Decoration.svg");
+        width: 253px;
+        height: 33px;
+        margin-bottom: 3.5rem;
+        margin-top: 2rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $color-primary;
+        padding: 2rem 5rem 2rem 5rem;
+        position: relative;
+
+        input {
+            border: none;
+            background-color: transparent;
+            margin-top: 0.75rem;
+            outline: none;
+            width: 100%;
+            border-bottom: 1px solid $color-darkgray;
+            padding: 0.25rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    &__btn {
+        border: 1px solid transparent;
+        background-color: transparent;
+        transition: .2s;
+        cursor: pointer;
+        padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+        font-size: 1rem;
+        color: $color-darkgray;
+
+        &:hover {
+            border-color: $color-darkgray;
+            color: $color-yellow;
+        }
+    }
+}
+
+#error {
+    color: red;
+    font-weight: 300;
+    text-align: start;
+    font-size: 0.7rem;
+    margin-top: 5px;
+}
