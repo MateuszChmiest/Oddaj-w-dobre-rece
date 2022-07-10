@@ -100,6 +100,9 @@ const App = () => {
 		} else if (password !== repeatPassword) {
 			setPasswordError("Hasła nie są takie same")
 		}
+
+		// TODO Rejestracja mimo ze hasla nie sa takie same / do poprawy
+		
 			setLoading(false);
 			handleSignUp();
 	}
