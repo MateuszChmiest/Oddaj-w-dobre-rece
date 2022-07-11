@@ -7,17 +7,18 @@ import HomeAboutUs from "./HomeAboutUs";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
 import HomeContact from "./HomeContact";
 
-const Home = () => {
+const Home = (props) => {
+const {currentUser} = props;
 	return (
 		<>
 			<Element name='HomeHeader'>
-				<HomeHeader />
+				<HomeHeader currentUser={currentUser}/>
 			</Element>
 			<Element name='HomeThreeColumns'>
 				<HomeThreeColumns />
 			</Element>
 			 <Element name='HomeSimpleSteps'>
-				<HomeSimpleSteps />
+				<HomeSimpleSteps currentUser={currentUser}/>
 			</Element>
 			<Element name='HomeAboutUs'>
 				<HomeAboutUs />

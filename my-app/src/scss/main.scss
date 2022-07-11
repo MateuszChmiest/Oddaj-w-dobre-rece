@@ -5,6 +5,7 @@
 @import "./settings/colors";
 @import "./settings/fonts";
 @import "./settings/mixins";
+@import "./settings/typography";
 
 //* Import components
 @import "./home";
@@ -17,3 +18,4 @@
 @import "./homewhowehelp";
 @import "./signin";
 @import "./signup";
+@import "./logout";

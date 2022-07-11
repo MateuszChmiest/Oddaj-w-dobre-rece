@@ -5,15 +5,16 @@ import bag from "../assets/Icon-2.svg";
 import search from "../assets/Icon-3.svg";
 import arrow from "../assets/Icon-4.svg";
 
-const HomeSimpleSteps = () => {
+const HomeSimpleSteps = (props) => {
+	const { currentUser } = props;
 
-const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	return (
 		<section className='simpleSteps'>
 			<div className='simpleSteps__title'>
 				<h1>Wystarczą 4 proste kroki</h1>
-				<div className='simpleSteps__decoration' />
+				<div className='decoration' />
 			</div>
 			<div className='simpleSteps__background'>
 				<div className='simpleSteps__steps'>
@@ -27,7 +28,7 @@ const navigate = useNavigate()
 						</p>
 					</div>
 					<div className='simpleSteps__step'>
-						<img src={bag} alt='bag' style={{marginBottom: "5px"}}/>
+						<img src={bag} alt='bag' style={{ marginBottom: "5px" }} />
 						<h3>Spakuj je</h3>
 						<hr style={{ width: "60px" }} />
 						<p>
@@ -58,7 +59,14 @@ const navigate = useNavigate()
 				</div>
 			</div>
 			<div className='simpleSteps__box'></div>
-			<a className="simpleSteps__btn" onClick={() => navigate("/SignIn")}>ODDAJ <br/>RZECZY</a>
+			<a
+				className='simpleSteps__btn'
+				onClick={() => {
+					currentUser ? navigate("/oddaj-rzeczy") : navigate("/logowanie");
+				}}>
+				ODDAJ <br />
+				RZECZY
+			</a>
 		</section>
 	);
 };

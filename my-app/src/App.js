@@ -5,6 +5,8 @@ import Nav from "./components/Nav";
 import NavSignUp from "./components/NavSignUp";
 import Login from "./components/SignIn";
 import Register from "./components/SignUp";
+import Logout from "./components/Logout";
+import FormHandOverStuff from "./components/FormHandOverStuff";
 import { fire, signup, login, logout, useAuth } from "./services/firebase";
 
 const App = () => {
@@ -35,9 +37,8 @@ const App = () => {
 	async function handleSignIn() {
 		try {
 			await login(email, password);
-			
-		} catch (err){
-			console.error(err)
+		} catch (err) {
+			alert(err);
 			clearInputs();
 		}
 	}
@@ -70,53 +71,51 @@ const App = () => {
 
 	const validateLogin = (e) => {
 		const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
-		e.preventDefault()
+		e.preventDefault();
 		setLoading(true);
 		clearErrors();
-		if(!email) {
-			setEmailError("To pole nie moze być puste!");
+		if (!email) {
+			return setEmailError("To pole nie moze być puste!");
 		} else if (!reg.test(email)) {
-			setEmailError("Email jest nieprawidłowy");
+			return setEmailError("Email jest nieprawidłowy");
 		}
 		if (password.length < 6) {
-			setPasswordError("Hasło jest za krótkie")
+			return setPasswordError("Hasło jest za krótkie");
 		}
-			setLoading(false);
-			handleSignIn();
-	}
+		setLoading(false);
+		handleSignIn();
+	};
 
 	const validateRegister = (e) => {
 		const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
-		e.preventDefault()
+		e.preventDefault();
 		setLoading(true);
 		clearErrors();
-		if(!email) {
-			setEmailError("To pole nie moze być puste!");
+		if (!email) {
+			return setEmailError("To pole nie moze być puste!");
 		} else if (!reg.test(email)) {
-			setEmailError("Email jest nieprawidłowy");
+			return setEmailError("Email jest nieprawidłowy");
 		}
 		if (password.length < 6) {
-			setPasswordError("Hasło jest za krótkie")
+			return setPasswordError("Hasło jest za krótkie");
 		} else if (password !== repeatPassword) {
-			setPasswordError("Hasła nie są takie same")
+			return setPasswordError("Hasła nie są takie same");
 		}
 
-		// TODO Rejestracja mimo ze hasla nie sa takie same / do poprawy
-		
-			setLoading(false);
-			handleSignUp();
-	}
+		setLoading(false);
+		handleSignUp();
+	};
 
 	return (
 		<Router>
 			<div className='nav'>
-				<NavSignUp handleLogout={handleLogout}/>
+				<NavSignUp handleLogout={handleLogout} />
 				<Nav />
 			</div>
 			<Routes>
 				<Route path='/' element={<Home currentUser={currentUser} />} />
 				<Route
-					path='/Login'
+					path='/logowanie'
 					element={
 						<Login
 							email={email}
@@ -134,7 +133,7 @@ const App = () => {
 					}
 				/>
 				<Route
-					path='/Register'
+					path='/rejestracja'
 					element={
 						<Register
 							email={email}
@@ -149,9 +148,12 @@ const App = () => {
 							validateRegister={validateRegister}
 							clearErrors={clearErrors}
 							clearInputs={clearInputs}
+							currentUser={currentUser}
 						/>
 					}
 				/>
+				<Route path="/wylogowano" element={<Logout/>}/>
+				<Route path="/oddaj-rzeczy" element={<FormHandOverStuff/>}/>
 			</Routes>
 		</Router>
 	);

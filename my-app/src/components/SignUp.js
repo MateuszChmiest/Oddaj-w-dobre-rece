@@ -15,9 +15,14 @@ const SignUp = (props) => {
 		passwordError,
     validateRegister,
     clearErrors,
-    clearInputs
+    clearInputs,
+	currentUser
 	} = props;
 	const navigate = useNavigate();
+
+	if (currentUser) {
+		navigate("/");
+	  }
 
 	return (
 		<section className='signUp'>
@@ -63,7 +68,7 @@ const SignUp = (props) => {
 							type='button'
 							className='signUp__btn'
 							onClick={() => {
-                navigate("/Login");
+                navigate("/logowanie");
                 clearErrors();
                 clearInputs();
               }}>

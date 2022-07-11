@@ -12,14 +12,14 @@ const NavSignUp = (props) => {
 			{currentUser ? (
 				<>
 					<div className='navSignUp__button'>
-						<a id="hiddenButton">Oddaj rzeczy</a>
+						<a id="hiddenButton" onClick={() => navigate("/oddaj-rzeczy")}>Oddaj rzeczy</a>
 					</div>
 					<a id="currentUser">Cześć {currentUser.email}</a>
 					<div className='navSignUp__button'>
 						<a
 							onClick={() => {
 								handleLogout();
-								navigate("/");
+								navigate("/wylogowano");
 							}}>
 							Wyloguj
 						</a>
@@ -28,10 +28,10 @@ const NavSignUp = (props) => {
 			) : (
 				<>
 					<div className='navSignUp__button'>
-						<a onClick={() => navigate("Login")}>Zaloguj</a>
+						<a onClick={() => navigate("/logowanie")}>Zaloguj</a>
 					</div>
 					<div className='navSignUp__button'>
-						<a onClick={() => navigate("Register")}>Załóż konto</a>
+						<a onClick={() => navigate("/rejestracja")}>Załóż konto</a>
 					</div>
 				</>
 			)}

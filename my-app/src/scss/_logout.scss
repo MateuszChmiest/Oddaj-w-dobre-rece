@@ -1,0 +1,37 @@
+.logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        width: 40%;
+
+        h2 {
+            color: $color-darkgray;
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+        }
+    }
+
+    &__btn {
+        border: 0.75px solid $color-darkgray;
+        background-color: transparent;
+        padding: 0.75rem 1rem 0.75rem 1rem;
+        color: $color-darkgray;
+        font-size: 1.125rem;
+        font-weight: 300;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            border-color: $color-yellow;
+            color: $color-yellow;
+        }
+    }
+}

@@ -55,7 +55,7 @@ const SignIn = (props) => {
 							type='button'
 							className='signIn__btn'
 							onClick={() => {
-                navigate("/Register");
+                navigate("/rejestracja");
                 clearErrors();
                 clearInputs();
               }}>
