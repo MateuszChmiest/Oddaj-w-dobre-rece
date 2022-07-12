@@ -26,9 +26,9 @@ const {currentUser} = props;
 			<Element name='HomeWhoWeHelp'>
 				<HomeWhoWeHelp />
 			</Element>
-			{/*<Element name='HomeContact'>
+			<Element name='HomeContact'>
 				<HomeContact />
-			</Element> */}
+			</Element>
 		</>
 	);
 };
