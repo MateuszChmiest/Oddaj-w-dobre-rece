@@ -53,6 +53,10 @@
 		&--btn {
 			align-self: flex-end;
 			width: 100%;
+
+			@include tablet {
+				width: 35%;
+			}
 		}
 	}
 

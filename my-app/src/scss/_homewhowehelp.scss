@@ -1,8 +1,7 @@
 .whoWeHelp {
 	display: flex;
 	justify-content: center;
-
-	height: 100vh;
+	height: 1000px;
 
 	&__container {
 		display: flex;
@@ -60,6 +59,31 @@
 
 		&:hover {
 			border-color: $color-darkgray;
+		}
+	}
+
+	&__text {
+		text-align: center;
+		margin-top: 3.5rem;
+		margin-bottom: 3.5rem;
+		font-size: 1.375rem;
+		line-height: 1.75rem;
+		color: $color-darkgray;
+		width: 40%;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		align-items: center;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid $color-darkgray;
+	}
+
+	&__content {
+		h2 {
+			margin-bottom: 0.5rem;
 		}
 	}
 }
