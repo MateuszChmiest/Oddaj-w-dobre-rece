@@ -1,7 +1,7 @@
 .whoWeHelp {
 	display: flex;
 	justify-content: center;
-	height: 1000px;
+	min-height: 800px;
 
 	&__container {
 		display: flex;
@@ -65,25 +65,58 @@
 	&__text {
 		text-align: center;
 		margin-top: 3.5rem;
-		margin-bottom: 3.5rem;
-		font-size: 1.375rem;
+		margin-bottom: 1.5rem;
+		font-size: 1.115rem;
 		line-height: 1.75rem;
 		color: $color-darkgray;
-		width: 40%;
+		width: 80%;
+
+
+		@include tablet {
+			width: 40%;
+			font-size: 1.375rem;
+		}
 	}
 
 	&__list {
 		display: flex;
 		justify-content: space-between;
+		flex-direction: column;
 		width: 70%;
-		align-items: center;
+		text-align: center;
+		font-family: $font-alt;
+		font-weight:lighter;
 		padding-bottom: 1.5rem;
+		line-height: 1.25rem;
 		border-bottom: 1px solid $color-darkgray;
+
+		p {
+			font-size: 0.75rem;
+
+			@include tablet {
+				font-size: 1rem;
+			}
+		}
+
+		@include tablet {
+			flex-direction: unset;
+			text-align: unset;
+			align-items: center;
+		}
 	}
 
 	&__content {
+		p {
+			margin-bottom: 0.5rem;
+		}
 		h2 {
 			margin-bottom: 0.5rem;
+			margin-top: 2rem;
+			font-size: 1.15rem;
+
+			@include tablet {
+				font-size: 1.625rem;
+			}
 		}
 	}
 }

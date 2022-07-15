@@ -5,14 +5,15 @@ import { getDocs, collection, query, doc } from "firebase/firestore";
 const HomeWhoWeHelp = () => {
 	const [foundation, setFoundation] = useState([]);
 	const [clickedButton, setClickedButton] = useState("foundations");
-	console.log(foundation);
 
 	const getData = async () => {
+		const firebaseData = [];
 		try {
 			const querySnapshot = await getDocs(collection(db, clickedButton));
 			querySnapshot.forEach((doc) => {
-				setFoundation({...doc.data(), id: doc.id});
+				firebaseData.push({ ...doc.data() });
 			});
+			setFoundation(firebaseData);
 		} catch (err) {
 			console.error(err);
 		}
@@ -27,7 +28,6 @@ const HomeWhoWeHelp = () => {
 			<div className='whoWeHelp__container'>
 				<h2>Komu pomagamy?</h2>
 				<div className='decoration'></div>
-				<button onClick={getData}>click</button>
 				<div className='whoWeHelp__steps'>
 					<a
 						className='whoWeHelp__step'
@@ -50,15 +50,17 @@ const HomeWhoWeHelp = () => {
 					współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
 					czego potrzebują.
 				</p>
-				<div className='whoWeHelp__list'>
-					<div className='whoWeHelp__content'>
-						<h2>Fundacja "Dbam o Zdrowie"</h2>
-						<p>Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji</p>
+				{foundation.map((data,index) => (
+					<div className='whoWeHelp__list'  key={index}>
+						<div className='whoWeHelp__content'>
+							<h2>{data.foundation}</h2>
+							<p>Cel i misja: {data.mission}</p>
+						</div>
+						<div className='whoWeHelp__items'>
+							<p>{data.items}</p>
+						</div>
 					</div>
-					<div className='whoWeHelp__items'>
-						<p>{foundation.items}</p>
-					</div>
-				</div>
+				))}
 			</div>
 		</section>
 	);
