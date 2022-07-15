@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../services/firebase";
 import { getDocs, collection, query, doc } from "firebase/firestore";
+import HomeWhoWeHelpPagination from "./HomeWhoWeHelpPagination";
 
 const HomeWhoWeHelp = () => {
 	const [foundation, setFoundation] = useState([]);
 	const [clickedButton, setClickedButton] = useState("foundations");
+	const [currentPage, setCurrentPage] = useState(1);
+	const [foundationsPerPage] = useState(3);
 
 	const getData = async () => {
 		const firebaseData = [];
@@ -20,8 +23,21 @@ const HomeWhoWeHelp = () => {
 	};
 
 	useEffect(() => {
+		setCurrentPage(1);
 		getData();
 	}, [clickedButton]);
+
+	// Get current foundations
+	const indexOfLastFoundation = currentPage * foundationsPerPage;
+	const indexOfFirstFoundation = indexOfLastFoundation - foundationsPerPage;
+	const currentFoundation = foundation.slice(
+	  indexOfFirstFoundation,
+	  indexOfLastFoundation
+	);
+
+	const paginate = (pageNumber) => {
+		setCurrentPage(pageNumber);
+	  };
 
 	return (
 		<section className='whoWeHelp'>
@@ -50,8 +66,8 @@ const HomeWhoWeHelp = () => {
 					współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
 					czego potrzebują.
 				</p>
-				{foundation.map((data,index) => (
-					<div className='whoWeHelp__list'  key={index}>
+				{currentFoundation.map((data, index) => (
+					<div className='whoWeHelp__list' key={index}>
 						<div className='whoWeHelp__content'>
 							<h2>{data.foundation}</h2>
 							<p>Cel i misja: {data.mission}</p>
@@ -61,6 +77,7 @@ const HomeWhoWeHelp = () => {
 						</div>
 					</div>
 				))}
+				<HomeWhoWeHelpPagination foundation={foundationsPerPage} paginate={paginate} totalFoundations={foundation.length}/>
 			</div>
 		</section>
 	);

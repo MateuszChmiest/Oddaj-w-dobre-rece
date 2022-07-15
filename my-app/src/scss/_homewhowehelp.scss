@@ -89,6 +89,7 @@
 		padding-bottom: 1.5rem;
 		line-height: 1.25rem;
 		border-bottom: 1px solid $color-darkgray;
+		transition: .2s;
 
 		p {
 			font-size: 0.75rem;
@@ -109,6 +110,7 @@
 		p {
 			margin-bottom: 0.5rem;
 		}
+
 		h2 {
 			margin-bottom: 0.5rem;
 			margin-top: 2rem;
