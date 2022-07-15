@@ -40,7 +40,7 @@
 		}
 
 		#success {
-			color: rgb(54, 190, 54);
+			color: lightgreen;
 			width: 60%;
 			text-align: center;
 			font-size: 1rem;
@@ -126,7 +126,7 @@
 		position: absolute;
 		display: flex;
 		justify-content: center;
-		bottom: 2.5rem;
+		bottom: 2.15rem;
 		left: 0;
 		width: 100%;
 
@@ -137,7 +137,7 @@
 		&--icons {
 			display: flex;
 			position: absolute;
-			bottom: -2.25rem;
+			bottom: -2rem;
 
 			@include tablet {
 				position: absolute;
