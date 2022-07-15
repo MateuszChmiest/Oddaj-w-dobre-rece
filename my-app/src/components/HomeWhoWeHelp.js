@@ -31,13 +31,13 @@ const HomeWhoWeHelp = () => {
 	const indexOfLastFoundation = currentPage * foundationsPerPage;
 	const indexOfFirstFoundation = indexOfLastFoundation - foundationsPerPage;
 	const currentFoundation = foundation.slice(
-	  indexOfFirstFoundation,
-	  indexOfLastFoundation
+		indexOfFirstFoundation,
+		indexOfLastFoundation
 	);
 
 	const paginate = (pageNumber) => {
 		setCurrentPage(pageNumber);
-	  };
+	};
 
 	return (
 		<section className='whoWeHelp'>
@@ -77,7 +77,11 @@ const HomeWhoWeHelp = () => {
 						</div>
 					</div>
 				))}
-				<HomeWhoWeHelpPagination foundation={foundationsPerPage} paginate={paginate} totalFoundations={foundation.length}/>
+				<HomeWhoWeHelpPagination
+					foundation={foundationsPerPage}
+					paginate={paginate}
+					totalFoundations={foundation.length}
+				/>
 			</div>
 		</section>
 	);
