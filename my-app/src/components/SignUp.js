@@ -28,7 +28,7 @@ const SignUp = (props) => {
 		<section className='signUp'>
 			<div className='signUp__container'>
 				<h1>Zarejestruj się</h1>
-				<div className='signUp__decoration'></div>
+				<div className='decoration'></div>
 				<form onSubmit={validateRegister}>
 					<div className='signUp__form'>
 						<label>
