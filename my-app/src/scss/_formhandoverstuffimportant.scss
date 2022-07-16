@@ -1,0 +1,26 @@
+.handOverImportant {
+    background-color: $color-yellow;
+    margin-top: 3rem;
+
+    @include tablet {
+        margin-top: 0;
+    }
+
+    &__container {
+        padding: 2.5rem 2rem 2.5rem 2rem;
+
+        @include tablet {
+            padding: 2.5rem 0 2.5rem 6rem;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+    }
+}
