@@ -10,17 +10,23 @@ const HomeContact = () => {
 	const [success, setSuccess] = useState("");
 
 	const sendForm = async (e) => {
-		const resp = await fetch(
-			`https://fer-api.coderslab.pl/v1/portfolio/contact`,
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ name, email, message }),
-			}
-		);
-		resp.json().then((msg) => console.log(msg));
+		try {
+			let resp = await fetch(
+				`https://fer-api.coderslab.pl/v1/portfolio/contact`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ name, email, message }),
+				}
+			);
+			resp = await resp.json();
+			console.log(resp)
+		} catch (err) {
+			console.log(err)
+		}
+		
 	};
 
 	const clearValidate = () => {

@@ -1,0 +1,153 @@
+.handOver {
+    display: flex;
+    height: 100vh;
+
+    &__background {
+        background-image: url("../assets/Form-Hero-Image.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+		height: 110vh;
+		position: absolute;
+		left: 0;
+		width: 90%;
+		z-index: -1;
+        opacity: 0.3;
+
+        @include tablet {
+            position: unset;
+            opacity: 1;
+            width: 50%;
+            height: 100vh;
+        }
+    }
+
+    &__steps {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        margin-top: 10rem;
+
+        @include tablet {
+            width: 50%;
+            margin-top: 2rem;
+        }
+
+        &--title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+            color: $color-darkgray;
+
+            h1 {
+                font-size: 1.5rem;
+                line-height: 1.65rem;
+
+                @include tablet {
+                    font-size: 2rem;
+                    line-height: 2.5rem;
+                }
+            }
+
+            h2 {
+                font-size: 1.45rem;
+                font-weight: 300;
+                margin-top: -1.25rem;
+                margin-bottom: 1.25rem;
+
+                @include tablet {
+                    font-size: 2.25rem;
+                    font-weight: 300;
+                    margin-top: -1rem;
+                    margin-bottom: 2.5rem;
+                }
+            }
+
+            @include tablet {
+                width: 70%;
+            }
+        }
+    }
+
+    &__box {
+        position: relative;
+        text-align: center;
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__step {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 90px;
+        width: 90px;
+        justify-content: center;
+        position: relative;
+        font-weight: 500;
+
+        @include tablet {
+            height: 100px;
+            width: 100px;
+        }
+
+        @include laptop {
+            height: 130px;
+            width: 130px;
+            font-weight: 300;
+        }
+        
+        &--number {
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+
+            @include tablet {
+                font-size: 1rem;
+            }
+
+            @include laptop {
+                font-size: 1.25rem;
+            }
+
+        }
+
+        &--info {
+            font-size: 0.75rem;
+
+
+            @include tablet {
+                font-size: 1rem;
+            }
+
+            @include laptop {
+                font-size: 1.25rem;
+            }
+        }
+
+        &--rectangle {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            transform: rotate(45deg);
+            border: 1px solid $color-darkgray;
+
+            @include tablet {
+                height: 85px;
+                width: 85px;
+            }
+
+            @include laptop {
+                height: 110px;
+                width: 110px;
+                border: 0.75px solid $color-darkgray;
+            }
+        }
+    }
+}

@@ -1,8 +1,9 @@
 import React from 'react'
+import FormHandOverStuffHeader from './FormHandOverStuffHeader'
 
 const FormHandOverStuff = () => {
   return (
-    <div>FormHandOverStuff</div>
+    <FormHandOverStuffHeader/>
   )
 }
 

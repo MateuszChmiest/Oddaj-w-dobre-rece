@@ -8,6 +8,8 @@ const pageNumbers = [];
 
 for(let i = 1; i <= Math.ceil(totalFoundations / foundation); i++) {
     pageNumbers.push(i)
+
+    //TODO return new Array(Math.ceil(totalFoundations / foundation)).fill(null).map((_,i) => {<li></li>})
 }
 
 
