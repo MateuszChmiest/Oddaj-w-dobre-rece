@@ -28,7 +28,7 @@ const App = () => {
 			// 	authProvider: "local",
 			// });
 		} catch (err) {
-			console.error(err);
+			alert(err);
 			clearInputs();
 		}
 	}
@@ -38,7 +38,7 @@ const App = () => {
 		try {
 			await login(email, password);
 		} catch (err) {
-			alert(err);
+			alert("Nieprawidłowy email lub hasło");
 			clearInputs();
 		}
 	}
@@ -75,13 +75,14 @@ const App = () => {
 		setLoading(true);
 		clearErrors();
 		if (!email) {
-			return setEmailError("To pole nie moze być puste!");
+			 setEmailError("To pole nie moze być puste!");
 		} else if (!reg.test(email)) {
-			return setEmailError("Email jest nieprawidłowy");
+			 setEmailError("Email jest nieprawidłowy");
 		}
 		if (password.length < 6) {
 			return setPasswordError("Hasło jest za krótkie");
-		}
+		} 
+
 		setLoading(false);
 		handleSignIn();
 	};
@@ -92,9 +93,9 @@ const App = () => {
 		setLoading(true);
 		clearErrors();
 		if (!email) {
-			return setEmailError("To pole nie moze być puste!");
+			 setEmailError("To pole nie moze być puste!");
 		} else if (!reg.test(email)) {
-			return setEmailError("Email jest nieprawidłowy");
+			 setEmailError("Email jest nieprawidłowy");
 		}
 		if (password.length < 6) {
 			return setPasswordError("Hasło jest za krótkie");
