@@ -3,6 +3,7 @@ import FormHandOverStuffHeader from "./FormHandOverStuffHeader";
 import FormHandOverStuffImportant from "./FormHandOverStuffImportant";
 import FormHandOverStuffStep1 from "./FormHandOverStuffStep1";
 import FormHandOverStuffStep2 from "./FormHandOverStuffStep2";
+import FormHandOverStuffStep3 from "./FormHandOverStuffStep3";
 import HomeContact from "./HomeContact";
 
 const FormHandOverStuff = () => {
@@ -10,7 +11,7 @@ const FormHandOverStuff = () => {
 		<>
 			<FormHandOverStuffHeader />
 			<FormHandOverStuffImportant />
-			<FormHandOverStuffStep2/>
+			<FormHandOverStuffStep1/>
 			<HomeContact />
 		</>
 	);
