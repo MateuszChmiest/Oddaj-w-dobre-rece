@@ -7,11 +7,22 @@ import FormHandOverStuffStep3 from "./FormHandOverStuffStep3";
 import HomeContact from "./HomeContact";
 
 const FormHandOverStuff = () => {
+	const showStep = (step) => {
+		switch (step) {
+			case 1:
+				return <FormHandOverStuffStep1 />;
+			case 2:
+				return <FormHandOverStuffStep2 />;
+			case 3:
+				return <FormHandOverStuffStep3 />;
+		}
+	};
+
 	return (
 		<>
 			<FormHandOverStuffHeader />
 			<FormHandOverStuffImportant />
-			<FormHandOverStuffStep1/>
+			{showStep(1)}
 			<HomeContact />
 		</>
 	);
