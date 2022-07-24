@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import FormHandOverStuffHeader from "./FormHandOverStuffHeader";
 import FormHandOverStuffImportant from "./FormHandOverStuffImportant";
 import FormHandOverStuffStep1 from "./FormHandOverStuffStep1";
 import FormHandOverStuffStep2 from "./FormHandOverStuffStep2";
 import FormHandOverStuffStep3 from "./FormHandOverStuffStep3";
+import FormHandOverStuffStep4 from "./FormHandOverStuffStep4";
+import FormHandOverStuffSummary from "./FormHandOverStuffSummary";
+import FormHandOverStuffThankYou from "./FormHandOverStuffThankYou";
+import { multiStepContext } from "./FormStepContext";
 import HomeContact from "./HomeContact";
 
 const FormHandOverStuff = () => {
+	// const { currentStep, finalData } = useContext(multiStepContext);
+	
 	const showStep = (step) => {
 		switch (step) {
 			case 1:
@@ -15,6 +21,12 @@ const FormHandOverStuff = () => {
 				return <FormHandOverStuffStep2 />;
 			case 3:
 				return <FormHandOverStuffStep3 />;
+			case 4:
+				return <FormHandOverStuffStep4 />;
+			case 5:
+				return <FormHandOverStuffSummary />;
+			case 6:
+				return <FormHandOverStuffThankYou />;
 		}
 	};
 
@@ -22,7 +34,7 @@ const FormHandOverStuff = () => {
 		<>
 			<FormHandOverStuffHeader />
 			<FormHandOverStuffImportant />
-			{showStep(1)}
+			{showStep(3)}
 			<HomeContact />
 		</>
 	);
