@@ -34,7 +34,7 @@ const FormHandOverStuff = () => {
 		<>
 			<FormHandOverStuffHeader />
 			<FormHandOverStuffImportant />
-			{showStep(3)}
+			{showStep(4)}
 			<HomeContact />
 		</>
 	);

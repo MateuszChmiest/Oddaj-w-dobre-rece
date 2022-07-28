@@ -67,7 +67,7 @@ const FormHandOverStuffStep3 = () => {
 					</div>
 					<div className='handOverStep__organization'>
 						<h2>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h2>
-						<input type='text'></input>
+						<input type='text' className="handOverStep__text"></input>
 					</div>
 				</div>
 				<div>
