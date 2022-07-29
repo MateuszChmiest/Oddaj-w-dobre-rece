@@ -8,6 +8,7 @@ import Register from "./components/SignUp";
 import Logout from "./components/Logout";
 import FormHandOverStuff from "./components/FormHandOverStuff";
 import { fire, signup, login, logout, useAuth } from "./services/firebase";
+import FormStepContext from "./components/FormStepContext";
 
 const App = () => {
 	const [email, setEmail] = useState("");
@@ -108,6 +109,7 @@ const App = () => {
 	};
 
 	return (
+		<FormStepContext>
 		<Router>
 			<div className='nav'>
 				<NavSignUp handleLogout={handleLogout} />
@@ -157,6 +159,7 @@ const App = () => {
 				<Route path="/oddaj-rzeczy" element={<FormHandOverStuff/>}/>
 			</Routes>
 		</Router>
+		</FormStepContext>
 	);
 };
 

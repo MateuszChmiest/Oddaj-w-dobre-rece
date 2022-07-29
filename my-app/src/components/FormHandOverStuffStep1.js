@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
+import { multiStepContext } from "./FormStepContext";
 
 const FormHandOverStuffStep1 = () => {
 	const [selectedThing, setSelectedThing] = useState('');
+
+const {setCurrentStep , currentStep } = useContext(multiStepContext)
 
 	const things = [
 		"ubrania, które nadają się do ponownego użycia",
@@ -43,7 +46,7 @@ const FormHandOverStuffStep1 = () => {
 					)
 					})}
 				</div>
-				<button type='button' className='handOverStep__button'>
+				<button type='button' className='handOverStep__button' onClick={() => setCurrentStep((prevStep) => prevStep + 1)}>
 					Dalej
 				</button>
 			</div>

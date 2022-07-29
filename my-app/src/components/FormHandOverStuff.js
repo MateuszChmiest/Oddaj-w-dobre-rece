@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import FormHandOverStuffHeader from "./FormHandOverStuffHeader";
 import FormHandOverStuffImportant from "./FormHandOverStuffImportant";
 import FormHandOverStuffStep1 from "./FormHandOverStuffStep1";
@@ -7,14 +7,14 @@ import FormHandOverStuffStep3 from "./FormHandOverStuffStep3";
 import FormHandOverStuffStep4 from "./FormHandOverStuffStep4";
 import FormHandOverStuffSummary from "./FormHandOverStuffSummary";
 import FormHandOverStuffThankYou from "./FormHandOverStuffThankYou";
-import { multiStepContext } from "./FormStepContext";
+import FormStepContext, { multiStepContext } from "./FormStepContext";
 import HomeContact from "./HomeContact";
 
 const FormHandOverStuff = () => {
-	// const { currentStep, finalData } = useContext(multiStepContext);
-	
-	const showStep = (step) => {
-		switch (step) {
+	const { currentStep, finalData, setCurrentStep } = useContext(multiStepContext);
+
+	const showStep = (currentStep) => {
+		switch (currentStep) {
 			case 1:
 				return <FormHandOverStuffStep1 />;
 			case 2:
@@ -32,10 +32,13 @@ const FormHandOverStuff = () => {
 
 	return (
 		<>
-			<FormHandOverStuffHeader />
-			<FormHandOverStuffImportant />
-			{showStep(4)}
-			<HomeContact />
+				<FormHandOverStuffHeader />
+				<FormHandOverStuffImportant />
+				{showStep(currentStep)}
+				<button onClick={() => setCurrentStep((prevStep) => prevStep + 1)}>
+					click
+				</button>
+				<HomeContact />
 		</>
 	);
 };

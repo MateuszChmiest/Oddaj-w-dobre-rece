@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import FormHandOverStuff from './FormHandOverStuff';
 
-export const multiStepContext = React.createContext();
+export const multiStepContext = React.createContext("");
 
-const FormStepContext = () => {
+export const FormStepContext = (props) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [userData, setUserData] = useState([]);
     const [finalData, setFinalData] = useState([]);
@@ -11,7 +11,7 @@ const FormStepContext = () => {
   return (
     <div>
         <multiStepContext.Provider value={{currentStep, setCurrentStep, userData, setUserData, finalData, setFinalData}}>
-            <FormHandOverStuff/>
+            {props.children}
         </multiStepContext.Provider>
     </div>
   )
