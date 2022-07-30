@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { multiStepContext } from "./FormStepContext";
 
 const FormHandOverStuffStep3 = () => {
-	const [selectedHelp, setSelectedHelp] = useState("");
+	const { setCurrentStep, currentStep, setUserData, userData } = useContext(multiStepContext);
+
+	const [selectedHelp, setSelectedHelp] = useState(userData.help);
+	const [selectedLocation, setSelectedLocation] = useState(userData.location);
+	const [organization, setOrganization] = useState(userData.organization);
 
 	const whoHelp = [
 		"dzieciom",
@@ -19,23 +24,40 @@ const FormHandOverStuffStep3 = () => {
 		setSelectedHelp((prev) => [...prev, target.value]);
 	};
 
+	const handleNext = () => {
+		setCurrentStep((prevStep) => prevStep + 1);
+		setUserData((prevData) => ({
+			...prevData, 
+			location: selectedLocation,
+			help: selectedHelp,
+			organization: organization,
+		}))
+	}
+
+	const handleBack = () => {
+		setCurrentStep((prevStep) => prevStep - 1);
+		setUserData((prevData) => ({
+			...prevData, 
+			location: selectedLocation,
+			help: selectedHelp,
+			organization: organization,
+		}))
+	}
+
 	return (
 		<section className='handOverStep'>
 			<div className='handOverStep__container'>
-				<div className='handOverStep__number'>Krok 3/4</div>
+				<div className='handOverStep__number'>Krok {currentStep}/4</div>
 				<div className='handOverStep__check'>
 					<h1>Lokalizacja:</h1>
 					<div className='handOverStep__choice'>
 						<select
 							id='options'
 							name='options'
-							className='handOverStep__options'>
-							<option
-								class='step_item_firstOne'
-								value='—— wybierz ——'
-								disabled
-								selected>
-								—— wybierz ——
+							className='handOverStep__options'
+							onChange={(e) => setSelectedLocation(e.target.value)}>
+							<option>
+								{userData.location}
 							</option>
 							<option value='Poznań'>Poznań</option>
 							<option value='Warszawa'>Warszawa</option>
@@ -67,14 +89,14 @@ const FormHandOverStuffStep3 = () => {
 					</div>
 					<div className='handOverStep__organization'>
 						<h2>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h2>
-						<input type='text' className="handOverStep__text"></input>
+						<input type='text' className="handOverStep__text" value={organization} onChange={(e) => setOrganization(e.target.value)}></input>
 					</div>
 				</div>
 				<div>
-					<button type='button' className='handOverStep__button'>
+					<button type='button' className='handOverStep__button' onClick={handleBack}>
 						Wstecz
 					</button>
-					<button type='button' className='handOverStep__button'>
+					<button type='button' className='handOverStep__button' onClick={handleNext}>
 						Dalej
 					</button>
 				</div>

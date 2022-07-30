@@ -35,9 +35,6 @@ const FormHandOverStuff = () => {
 				<FormHandOverStuffHeader />
 				<FormHandOverStuffImportant />
 				{showStep(currentStep)}
-				<button onClick={() => setCurrentStep((prevStep) => prevStep + 1)}>
-					click
-				</button>
 				<HomeContact />
 		</>
 	);
