@@ -17,184 +17,254 @@
 		z-index: -1;
 
 		@include tablet {
-            opacity: 0;
+			opacity: 0;
 		}
 	}
 
 	&__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-        padding-left: 1rem;
-        height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: flex-start;
+		padding-left: 1rem;
+		height: 100%;
 		z-index: 2;
 
-        @include tablet {
-            padding-left: 5rem;
-        }
+		@include tablet {
+			padding-left: 5rem;
+		}
 	}
 
-    &__number {
-        font-size: 1.5rem;
-        font-weight: 300;
-    }
+	&__number {
+		font-size: 1.5rem;
+		font-weight: 300;
+	}
 
-    &__check {
-        h1 {
-            font-size: 1.75rem;
-            font-weight: 600;
+	&__check {
+		h1 {
+			font-size: 1.3rem;
+			font-weight: 600;
 
-            @include tablet {
-                font-size: 2rem;
+			@include tablet {
+				font-size: 1.75rem;
+			}
+		}
+	}
+
+	&__choice {
+		padding-top: 1.5rem;
+
+		@include tablet {
+			padding-top: 2.5rem;
+		}
+	}
+
+	&__button {
+		border: 0.75px solid $color-darkgray;
+		background-color: transparent;
+		padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+		font-size: 1rem;
+		font-weight: 300;
+		cursor: pointer;
+		transition: 0.2s;
+		margin-right: 2rem;
+
+		&:hover {
+			border-color: $color-yellow;
+		}
+
+		@include tablet {
+			padding: 1rem 2rem 1rem 2rem;
+			font-size: 1.5rem;
+		}
+	}
+
+	&__input {
+		position: relative;
+		cursor: pointer;
+		margin-right: 1.25rem;
+
+		&:after {
+			content: "";
+			top: -55%;
+			width: 23px;
+			height: 23px;
+			border: 0.75px solid black;
+			position: absolute;
+			background-color: whitesmoke;
+
+			@include tablet {
+				width: 30px;
+				height: 30px;
+			}
+		}
+
+		&:checked {
+			&:after {
+				content: "";
+				width: 23px;
+				height: 23px;
+				border: 0.75px solid black;
+				position: absolute;
+				background-color: $color-yellow;
+
+				@include tablet {
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
+
+	&__label {
+		font-size: 0.65rem;
+		padding-left: 1.5rem;
+
+		@include tablet {
+			font-size: 1rem;
+		}
+
+		@include laptop {
+			font-size: 1.25rem;
+		}
+	}
+
+	&__options {
+		padding: 0.75rem 2rem 0.75rem 2rem;
+		background-color: transparent;
+		border: 0.75px solid $color-darkgray;
+		outline: none;
+		margin-bottom: 0.75rem;
+
+		@include tablet {
+			margin-bottom: 1rem;
+			padding: 1rem 2rem 1rem 2rem;
+		}
+	}
+
+	&__choiceHelp {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 0.5rem;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.75rem 2rem 0.75rem 0;
+
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 1rem;
+			padding: 1rem 2rem 1rem 0;
+		}
+
+		@include laptop {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	&__checkbox {
+		position: relative;
+		cursor: pointer;
+		margin-bottom: 1rem;
+		z-index: -2;
+
+		&:after {
+			content: "";
+			top: -85%;
+			width: 200px;
+			height: 35px;
+			border: 0.75px solid black;
+			position: absolute;
+			background-color: whitesmoke;
+			z-index: -1;
+		}
+
+		&:checked {
+			&:after {
+				content: "";
+				width: 200px;
+				height: 35px;
+				border: 0.75px solid black;
+				position: absolute;
+				background-color: $color-yellow;
+			}
+		}
+	}
+
+	&__label {
+		z-index: 1;
+		cursor: pointer;
+		font-weight: 300;
+		font-size: 1.25rem;
+		margin-left: -20px;
+		margin-right: 1rem;
+	}
+
+	&__text {
+		padding: 0.25rem 0 0.25rem 0;
+		margin-top: 1rem;
+		background-color: transparent;
+		outline: none;
+		border: 0.75px solid $color-darkgray;
+		width: 50%;
+	}
+
+	&__address {
+		@include tablet {
+			display: flex;
+		}
+
+		&--data {
+			padding: 1rem 1.5rem 1rem 0;
+
+			@include tablet {
+				padding: 2rem 6rem 3rem 0;
+			}
+
+            h2 {
+                font-weight: 600;
             }
-        }
-    }
+		}
+	}
 
-    &__choice {
-        padding-top: 2.5rem;
-    }
-
-    &__button {
-        border: 0.75px solid $color-darkgray;
-        background-color: transparent;
-        padding: 0.75rem 1.5rem 0.75rem 1.5rem;
-        font-size: 1rem;
-        font-weight: 300;
-        cursor: pointer;
-        transition: .2s;
-        margin-right: 2rem;
-
-        &:hover {
-            border-color: $color-yellow;
-        }
-
-        @include tablet {
-            padding: 1rem 2rem 1rem 2rem;
-            font-size: 1.5rem;
-        }
-    }
-
-    &__input {
-        position: relative;
-        cursor: pointer;
-        margin-right: 1.25rem;
-        
-        &:after {
-            content: "";
-            top: -55%;
-            width: 23px;
-            height: 23px;
-            border: 0.75px solid black;
-            position: absolute;
-            background-color: whitesmoke;
-
-            @include tablet {
-                width: 30px;
-                height: 30px;
-            }
-          }
-      
-          &:checked {
-            &:after {
-              content: "";
-              width: 23px;
-              height: 23px;
-              border: 0.75px solid black;
-              position: absolute;
-              background-color: $color-yellow;
-
-              @include tablet {
-                width: 30px;
-                height: 30px;
-            }
-            }
-          }
-    }
-
-    &__label {
-        font-size: 0.65rem;
-        padding-left: 1.5rem;
-
-        @include tablet {
-            font-size: 1rem;
-        }
-
-        @include laptop {
-            font-size: 1.25rem;
-        }
-    }
-
-    &__options {
-        padding: 1rem 2rem 1rem 2rem;
-        background-color: transparent;
-        border: 0.75px solid $color-darkgray;
-        outline: none;
-        margin-bottom: 1rem;
-    }
-
-    &__choiceHelp {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 1rem;
+    &__addressLabel {
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 2rem 1rem 0;
+        margin-top: 0.5rem;
+        font-weight: 300;
+        line-height: 1.15rem;
 
         @include tablet {
-            grid-template-columns: repeat(2, 1fr);
+            margin-top: 1rem;
         }
-
-        @include laptop {
-                grid-template-columns: repeat(3, 1fr);
-        }
-
     }
 
-    &__checkbox {
-        position: relative;
-        cursor: pointer;
-        margin-bottom: 1rem;
-        z-index: -2;
-        
-        &:after {
-            content: "";
-            top: -85%;
-            width: 200px;
-            height: 35px;
-            border: 0.75px solid black;
-            position: absolute;
-            background-color: whitesmoke;
-            z-index: -1;
-          }
-
-          &:checked {
-            &:after {
-              content: "";
-              width: 200px;
-              height: 35px;
-              border: 0.75px solid black;
-              position: absolute;
-              background-color: $color-yellow;
-            }
-          }
-    }
-
-    &__label {
-        z-index: 1;
-        cursor: pointer;
-        font-weight: 300;
-        font-size: 1.25rem;
-        margin-left: -20px;
-        margin-right: 1rem;
-    }
-
-    &__text {
-        padding: 0.25rem 0 0.25rem 0;
-        margin-top: 1rem;
+    &__addressInput {
+        margin-left: 0;
+        width: 10rem;
+        height: 1.5rem;
         background-color: transparent;
-        outline: none;
         border: 0.75px solid $color-darkgray;
-        width: 50%;
+        background-color: rgba(255, 255, 255, 0.438);
+        outline: none;
+
+        @include tablet {
+            margin-left: 1rem;
+        }
+    }
+
+    &__addressText {
+        margin-left: 0;
+        width: 10rem;
+        height: 3rem;
+        resize: none;
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.438);
+        border: 0.75px solid $color-darkgray;
+
+        @include tablet {
+            margin-left: 1rem;
+            height: 4rem;
+        }
     }
 }

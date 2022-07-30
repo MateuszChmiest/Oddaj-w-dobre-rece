@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import FormHandOverStuff from './FormHandOverStuff';
 
 export const multiStepContext = React.createContext("");
 
@@ -13,10 +12,10 @@ export const FormStepContext = (props) => {
       organization: "",
       street: "",
       city: "",
-      postalCode: "",
-      phoneNumber: "",
+      postCode: "",
+      phone: "",
       date: "",
-      hour: "",
+      time: "",
       comment: ""
     });
     const [finalData, setFinalData] = useState([]);

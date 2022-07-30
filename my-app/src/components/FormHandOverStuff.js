@@ -11,7 +11,7 @@ import FormStepContext, { multiStepContext } from "./FormStepContext";
 import HomeContact from "./HomeContact";
 
 const FormHandOverStuff = () => {
-	const { currentStep, finalData, setCurrentStep } = useContext(multiStepContext);
+	const { currentStep } = useContext(multiStepContext);
 
 	const showStep = (currentStep) => {
 		switch (currentStep) {
