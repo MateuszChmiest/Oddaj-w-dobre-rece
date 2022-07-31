@@ -30,34 +30,77 @@ const FormHandOverStuffStep4 = () => {
 							<h2>Adres odbioru:</h2>
 							<div class='handOverStep__addressLabel'>
 								<label for='street'>Ulica</label>
-								<input type='text' name="street" className="handOverStep__addressInput" defaultValue={userData.street}/>
+								<input
+									type='text'
+									name='street'
+									className='handOverStep__addressInput'
+									defaultValue={userData.street}
+								/>
 							</div>
-              <div class='handOverStep__addressLabel'>
+							<div class='handOverStep__addressLabel'>
 								<label for='city'>Miasto</label>
-								<input type='text' name="city" className="handOverStep__addressInput" defaultValue={userData.city}/>
+								<input
+									type='text'
+									name='city'
+									className='handOverStep__addressInput'
+									defaultValue={userData.city}
+								/>
 							</div>
-              <div class='handOverStep__addressLabel'>
-								<label for='postcode'>Kod <br/>pocztowy</label>
-								<input type='text' name="postcode" className="handOverStep__addressInput" defaultValue={userData.postCode}/>
+							<div class='handOverStep__addressLabel'>
+								<label for='postcode'>
+									Kod <br />
+									pocztowy
+								</label>
+								<input
+									type='text'
+									name='postcode'
+									className='handOverStep__addressInput'
+									defaultValue={userData.postCode}
+								/>
 							</div>
-              <div class='handOverStep__addressLabel'>
-								<label for='phone'>Numer <br/>telefonu</label>
-								<input type='text' name="phone" className="handOverStep__addressInput" defaultValue={userData.phone}/>
+							<div class='handOverStep__addressLabel'>
+								<label for='phone'>
+									Numer <br />
+									telefonu
+								</label>
+								<input
+									type='text'
+									name='phone'
+									className='handOverStep__addressInput'
+									defaultValue={userData.phone}
+								/>
 							</div>
 						</div>
 						<div className='handOverStep__address--data'>
 							<h2>Termin odbioru:</h2>
 							<div class='handOverStep__addressLabel'>
 								<label for='date'>Data</label>
-								<input type='date' name="date" className="handOverStep__addressInput" defaultValue={userData.date}/>
+								<input
+									type='date'
+									name='date'
+									className='handOverStep__addressInput'
+									defaultValue={userData.date}
+								/>
 							</div>
-              <div class='handOverStep__addressLabel'>
+							<div class='handOverStep__addressLabel'>
 								<label for='time'>Godzina</label>
-								<input type='time' name="time" className="handOverStep__addressInput" defaultValue={userData.time}/>
+								<input
+									type='time'
+									name='time'
+									className='handOverStep__addressInput'
+									defaultValue={userData.time}
+								/>
 							</div>
-              <div class='handOverStep__addressLabel'>
-								<label for='comment'>Uwagi<br/> dla kuriera</label>
-								<textarea className="handOverStep__addressText" name="comment" defaultValue={userData.comment}/>
+							<div class='handOverStep__addressLabel'>
+								<label for='comment'>
+									Uwagi
+									<br /> dla kuriera
+								</label>
+								<textarea
+									className='handOverStep__addressText'
+									name='comment'
+									defaultValue={userData.comment}
+								/>
 							</div>
 						</div>
 					</div>
