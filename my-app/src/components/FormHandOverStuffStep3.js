@@ -2,7 +2,8 @@ import React, { useState, useContext } from "react";
 import { multiStepContext } from "./FormStepContext";
 
 const FormHandOverStuffStep3 = () => {
-	const { setCurrentStep, currentStep, setUserData, userData } = useContext(multiStepContext);
+	const { setCurrentStep, currentStep, setUserData, userData } =
+		useContext(multiStepContext);
 
 	const [selectedHelp, setSelectedHelp] = useState(userData.help);
 	const [selectedLocation, setSelectedLocation] = useState(userData.location);
@@ -25,24 +26,21 @@ const FormHandOverStuffStep3 = () => {
 	};
 
 	const handleNext = () => {
+		if (selectedHelp.length === 0) {
+			return alert("Musisz wybrać komu chcesz pomóc!");
+		} 
 		setCurrentStep((prevStep) => prevStep + 1);
 		setUserData((prevData) => ({
-			...prevData, 
+			...prevData,
 			location: selectedLocation,
 			help: selectedHelp,
 			organization: organization,
-		}))
-	}
+		}));
+	};
 
 	const handleBack = () => {
 		setCurrentStep((prevStep) => prevStep - 1);
-		setUserData((prevData) => ({
-			...prevData, 
-			location: selectedLocation,
-			help: selectedHelp,
-			organization: organization,
-		}))
-	}
+	};
 
 	return (
 		<section className='handOverStep'>
@@ -56,9 +54,7 @@ const FormHandOverStuffStep3 = () => {
 							name='options'
 							className='handOverStep__options'
 							onChange={(e) => setSelectedLocation(e.target.value)}>
-							<option>
-								{userData.location}
-							</option>
+							<option>{userData.location}</option>
 							<option value='Poznań'>Poznań</option>
 							<option value='Warszawa'>Warszawa</option>
 							<option value='Kraków'>Kraków</option>
@@ -67,36 +63,46 @@ const FormHandOverStuffStep3 = () => {
 						</select>
 					</div>
 					<div className='handOverStep__check'>
-						<h2>Zaznacz co chcesz oddać:</h2>
-            <div className="handOverStep__choiceHelp">
-						{whoHelp.map((item, index) => {
-							return (
-								<div className='handOverStep__help' key={index}>
-									<input
-										type='checkbox'
-										id={index}
-										value={item}
-										checked={selectedHelp.includes(item)}
-										onChange={handleChangeHelp}
-										className='handOverStep__checkbox'></input>
-									<label htmlFor={index} className='handOverStep__label'>
-										{item}
-									</label>
-								</div>
-							);
-						})}
-            </div>
+						<h2>Komu chcesz pomóc?</h2>
+						<div className='handOverStep__choiceHelp'>
+							{whoHelp.map((item, index) => {
+								return (
+									<div className='handOverStep__help' key={index}>
+										<input
+											type='checkbox'
+											id={index}
+											value={item}
+											checked={selectedHelp.includes(item)}
+											onChange={handleChangeHelp}
+											className='handOverStep__checkbox'></input>
+										<label htmlFor={index} className='handOverStep__label'>
+											{item}
+										</label>
+									</div>
+								);
+							})}
+						</div>
 					</div>
 					<div className='handOverStep__organization'>
 						<h2>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h2>
-						<input type='text' className="handOverStep__text" value={organization} onChange={(e) => setOrganization(e.target.value)}></input>
+						<input
+							type='text'
+							className='handOverStep__text'
+							value={organization}
+							onChange={(e) => setOrganization(e.target.value)}></input>
 					</div>
 				</div>
 				<div>
-					<button type='button' className='handOverStep__button' onClick={handleBack}>
+					<button
+						type='button'
+						className='handOverStep__button'
+						onClick={handleBack}>
 						Wstecz
 					</button>
-					<button type='button' className='handOverStep__button' onClick={handleNext}>
+					<button
+						type='button'
+						className='handOverStep__button'
+						onClick={handleNext}>
 						Dalej
 					</button>
 				</div>

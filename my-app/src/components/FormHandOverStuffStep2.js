@@ -6,6 +6,9 @@ const FormHandOverStuffStep2 = () => {
 	const [selectedBags, setSelectedBags] = useState(userData.bags);
 
 	const handleNext = () => {
+		if(selectedBags.length > 2) {
+			return alert("Musisz wybrać liczbę worków!");
+		}
 		setCurrentStep((prevStep) => prevStep + 1);
 		setUserData((prevData) => ({
 			...prevData, 
@@ -15,10 +18,6 @@ const FormHandOverStuffStep2 = () => {
 
 	const handleBack = () => {
 		setCurrentStep((prevStep) => prevStep - 1);
-		setUserData((prevData) => ({
-			...prevData, 
-			bags: selectedBags,
-		}))
 	}
 
 	return (

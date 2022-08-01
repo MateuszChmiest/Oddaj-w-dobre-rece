@@ -61,8 +61,8 @@ const HomeContact = () => {
 		}
 
 			clearInputs();
-			setSuccess("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
 			sendForm();
+			setSuccess("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
 	};
 
 	return (

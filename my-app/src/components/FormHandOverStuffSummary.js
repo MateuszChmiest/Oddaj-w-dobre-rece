@@ -45,11 +45,17 @@ const FormHandOverStuffSummary = () => {
 								<p>{userData.city}</p>
 							</div>
 							<div class='handOverStep__addressLabel'>
-              <h3>Kod <br/>pocztowy:</h3>
+								<h3>
+									Kod <br />
+									pocztowy:
+								</h3>
 								<p>{userData.postCode}</p>
 							</div>
 							<div class='handOverStep__addressLabel'>
-              <h3>Numer <br/>telefonu:</h3>
+								<h3>
+									Numer <br />
+									telefonu:
+								</h3>
 								<p>{userData.phone}</p>
 							</div>
 						</div>

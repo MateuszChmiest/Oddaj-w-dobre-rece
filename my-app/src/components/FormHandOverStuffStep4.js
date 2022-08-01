@@ -1,22 +1,38 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { multiStepContext } from "./FormStepContext";
 
 const FormHandOverStuffStep4 = () => {
 	const { setCurrentStep, currentStep, setUserData, userData } =
 		useContext(multiStepContext);
 
+		const [street, setStreet] = useState(userData.street);
+		const [city, setCity] = useState(userData.city);
+		const [postCode, setPostCode] = useState(userData.postCode);
+		const [phone, setPhone] = useState(userData.phone);
+		const [date, setDate] = useState(userData.date);
+		const [time, setTime] = useState(userData.time);
+		const [comment, setComment] = useState(userData.comment);
+
 	const handleNext = () => {
+		if (!street || !city || !postCode || !phone || !date || !time) {
+			return alert("Musisz uzupełnić wszystkie pola!")
+		}
 		setCurrentStep((prevStep) => prevStep + 1);
 		setUserData((prevData) => ({
 			...prevData,
+			street: street,
+			city: city,
+			postCode: postCode,
+			phone: phone,
+			date: date,
+			time: time,
+			comment: comment
 		}));
 	};
 
 	const handleBack = () => {
 		setCurrentStep((prevStep) => prevStep - 1);
-		setUserData((prevData) => ({
-			...prevData,
-		}));
+
 	};
 
 	return (
@@ -35,6 +51,7 @@ const FormHandOverStuffStep4 = () => {
 									name='street'
 									className='handOverStep__addressInput'
 									defaultValue={userData.street}
+									onChange={(e) => setStreet(e.target.value)}
 								/>
 							</div>
 							<div class='handOverStep__addressLabel'>
@@ -44,6 +61,7 @@ const FormHandOverStuffStep4 = () => {
 									name='city'
 									className='handOverStep__addressInput'
 									defaultValue={userData.city}
+									onChange={(e) => setCity(e.target.value)}
 								/>
 							</div>
 							<div class='handOverStep__addressLabel'>
@@ -54,8 +72,10 @@ const FormHandOverStuffStep4 = () => {
 								<input
 									type='text'
 									name='postcode'
+									placeholder="12-345"
 									className='handOverStep__addressInput'
 									defaultValue={userData.postCode}
+									onChange={(e) => setPostCode(e.target.value)}
 								/>
 							</div>
 							<div class='handOverStep__addressLabel'>
@@ -66,8 +86,10 @@ const FormHandOverStuffStep4 = () => {
 								<input
 									type='text'
 									name='phone'
+									placeholder="123 456 789"
 									className='handOverStep__addressInput'
 									defaultValue={userData.phone}
+									onChange={(e) => setPhone(e.target.value)}
 								/>
 							</div>
 						</div>
@@ -80,6 +102,7 @@ const FormHandOverStuffStep4 = () => {
 									name='date'
 									className='handOverStep__addressInput'
 									defaultValue={userData.date}
+									onChange={(e) => setDate(e.target.value)}
 								/>
 							</div>
 							<div class='handOverStep__addressLabel'>
@@ -89,6 +112,7 @@ const FormHandOverStuffStep4 = () => {
 									name='time'
 									className='handOverStep__addressInput'
 									defaultValue={userData.time}
+									onChange={(e) => setTime(e.target.value)}
 								/>
 							</div>
 							<div class='handOverStep__addressLabel'>
@@ -100,6 +124,7 @@ const FormHandOverStuffStep4 = () => {
 									className='handOverStep__addressText'
 									name='comment'
 									defaultValue={userData.comment}
+									onChange={(e) => setComment(e.target.value)}
 								/>
 							</div>
 						</div>

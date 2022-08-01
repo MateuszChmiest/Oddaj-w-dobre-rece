@@ -22,6 +22,9 @@ const FormHandOverStuffStep1 = () => {
 	};
 
 	const handleNext = () => {
+		if(selectedThing.length === 0) {
+			return alert("Musisz wybrać co chcesz oddać!")
+		}
 		setCurrentStep((prevStep) => prevStep + 1);
 		setUserData((prevData) => ({
 			...prevData, 
