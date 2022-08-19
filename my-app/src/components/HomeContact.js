@@ -22,11 +22,10 @@ const HomeContact = () => {
 				}
 			);
 			resp = await resp.json();
-			console.log(resp)
+			console.log(resp);
 		} catch (err) {
-			console.log(err)
+			console.log('err');
 		}
-		
 	};
 
 	const clearValidate = () => {
@@ -50,7 +49,7 @@ const HomeContact = () => {
 
 		if (!name) {
 			setErrorName("To pole nie może być puste!");
-		} 
+		}
 		if (!email) {
 			setErrorEmail("To pole nie może być puste!");
 		} else if (!reg.test(email)) {
@@ -60,9 +59,9 @@ const HomeContact = () => {
 			return setErrorMessage("Wiadomość musi mieć conajmniej 120 znaków!");
 		}
 
-			clearInputs();
-			sendForm();
-			setSuccess("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
+		clearInputs();
+		sendForm();
+		setSuccess("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
 	};
 
 	return (
@@ -71,7 +70,7 @@ const HomeContact = () => {
 			<div className='homeContact__contact'>
 				<h2>Skontaktuj się z nami</h2>
 				<div className='decoration'></div>
-				<p id="success">{success}</p>
+				<p id='success'>{success}</p>
 				<form className='homeContact__form' onSubmit={validateContact}>
 					<div className='homeContact__inputs'>
 						<div className='homeContact__inputs--input'>
