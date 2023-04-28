@@ -31,9 +31,10 @@ Oddaj w dobre ręce is a website that allows you to donate unnecessary things to
 The projest is hosted on vercel platform, so you can see this project without downloading it.
 You can see this project <a href="https://oddaj-w-dobre-rece.vercel.app/">> HERE <</a>
 
-<h2>Run</h2>
+## Run
 <li>go to the weather-app folder</li>
 <li>npm install</li>
 <li>npm start</li>
 
+  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
