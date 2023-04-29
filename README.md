@@ -32,7 +32,7 @@ The projest is hosted on vercel platform, so you can see this project without do
 You can see this project <a href="https://oddaj-w-dobre-rece.vercel.app/">> HERE <</a>
 
 ## Run
-<li>go to the weather-app folder</li>
+<li>go to the my-app folder</li>
 <li>npm install</li>
 <li>npm start</li>
 
